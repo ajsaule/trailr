@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background-color: #b2b9b8; /* or lightseagreen */
+}
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #eae1c7;
+    height: 60px;
+    border-radius: 10px;
+    
+}
+.logo img {
+    height: 60px;
+    margin-left: 85px; /* for hacky centering */
+}
+.explore a {
+    display: flex;
+    padding: 20px;
+    flex-direction: row;
+    text-decoration: none;
+    font-weight: 500;
+}
+.account-sign a {
+    margin: 0 20px 0 0;
+    text-decoration: none;
+}
+.account-sign button {
+    padding: 10px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}
+.sign-up {
+    background-color: #e56e27;
+    border-style: none;  
+}
+.sign-up:hover {
+    background-color: #e79768;
+    border-style: none;  
+}
+.log-in { 
+    background-color: #eae1c7;
+    border-style: solid;
+    border-color: #e56e27;
+}
+.log-in:hover { 
+    background-color: #eae1c7;
+    border-style: solid;
+    border-color: #e79768;
+}
+
+.header-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 25px auto;
+    width: 1250px;
+    height: 500px;
+    border-radius: 10px;
+    background-color:  #eae1c7;
+    box-shadow: 0 0 12px #919191
+}
+.header-welcome {
+    height: 100px
+}
+.header-images {
+
+}
+.header-content {
+
+}
+.header-more-content {
+
+}
+.search-bar {
+    display: flex;
+    justify-items: space-between;
+    margin: 0 auto;
+    width: 950px;
+    /* align-items: flex-end; */
+    border-style: none;
+    outline: none;
+}
+.search-bar p {
+    margin: 12px;
+    padding-right: 50px;
+    font-size: 15pt;
+}
+.search-bar input {
+    font-size: 15pt;
+    border-radius: 10px;
+}
+.search-field i {
+    position: absolute;
+}
+
+.feed-tile {
+    display: grid;
+    grid-template-columns: 1fr 2fr ;
+    grid-gap: 25px;
+    gap: 25px;
+    padding: 25px;
+    margin: 25px auto;
+    width: 900px;
+    height: 300px;
+    border-radius: 10px;
+    background-color:  #eae1c7;
+    box-shadow: 0 0 12px #919191
+}
+
+.feed-image img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 1290px) {
+    .header-wrapper {
+        width: 100%;
+    }
+    .search-bar {
+        width: 90%
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .feed-tile {    
+        padding: 0;
+        width: 80%;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+        grid-gap: 15px;
+        gap: 15px
+    }
+    .feed-image {
+        overflow: hidden;
+        height: 150px
+    }
+    .feed-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0 0;
+    }
+    .feed-description {
+        height: 125px
+    }
+}
+
+@media screen and (max-width: 785px) {
+    /* implement a slider for the menu */   
+}
