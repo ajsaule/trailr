@@ -1,1 +1,15 @@
-<h1>hello world</h1>
+<!-- should be a .each loop to print all the posts from the DB -->
+
+<% all_trails.each do |trail| %>
+<div class="feed-tile">
+    <div class="feed-image">
+        <img src="<%= trail["image_url"] %>" alt="">
+    </div>
+    <div class="feed-description">
+        <h1><%= trail["title"] %></h1>
+        <p><%= trail["difficulty"] %></p>
+        <p>Rating: <%= trail["rating"] %></p>
+        <p>Description: <%= trail["description"] %></p>
+    </div>
+</div>
+<% end %>

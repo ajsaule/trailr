@@ -109,16 +109,18 @@ nav {
     padding: 25px;
     margin: 25px auto;
     width: 900px;
-    height: 300px;
+    height: 200px;
     border-radius: 10px;
     background-color:  #eae1c7;
     box-shadow: 0 0 12px #919191
 }
-
 .feed-image img {
     border-radius: 10px;
     width: 100%;
     height: 100%;
+}
+.feed-description h1, h5, p {
+    margin: 10px;
 }
 
 @media screen and (max-width: 1290px) {
@@ -134,6 +136,7 @@ nav {
     .feed-tile {    
         padding: 0;
         width: 80%;
+        height: 320px;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: none;
         grid-gap: 15px;
@@ -144,6 +147,7 @@ nav {
         height: 150px
     }
     .feed-image img {
+        transform: translateY(-50%);
         max-width: 100%;
         height: auto;
         border-radius: 10px 10px 0 0;
