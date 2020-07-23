@@ -1,4 +1,37 @@
-<!-- should be a .each loop to print all the posts from the DB -->
+<div>
+    <nav>
+        <div class="explore">
+        <a href="#">Discover</a></div>
+        <div class="logo"><a href="/"><img src="/images/trailr-hero.png" alt=""></a></div>
+        <div class="account-sign"><a href="#">About</a>
+        <% if !!!session["user_id"] %>
+            <button class="sign-up">Sign up</button>
+            <a href="/login"><button class="log-in">Log in</button></a>
+            <% else %>
+           <a href="/"></a><button class="log-in">Log out</button>
+        <% end %>
+        </div>
+    </nav>
+</div>
+
+<div class="header-wrapper">
+    <div class="header-welcome">
+
+    </div>
+    <div class="header-images">
+
+    </div>
+    <div class="header-content">
+
+    </div>
+    <div class="header-more-content">
+
+    </div>
+</div>
+<div class="search-bar">
+    <p>Melbourne</p>
+    <i class="fa fa-search"></i><input class="search-bar" type="text">
+</div>
 
 <% all_trails.each do |trail| %>
 <div class="feed-tile">
@@ -9,7 +42,7 @@
         <h1><%= trail["title"] %></h1>
         <p><%= trail["difficulty"] %></p>
         <p>Rating: <%= trail["rating"] %></p>
-        <p>Description: <%= trail["description"] %></p>
+        <p class="trail-description">Description: <%= trail["description"] %>...<a href="/trails/<%= trail["id"] %>">see more</a></p>
     </div>
 </div>
 <% end %>

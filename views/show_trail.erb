@@ -1,0 +1,34 @@
+<div>
+    <nav>
+        <div class="explore">
+        <a href="#">Discover</a>
+        </div>
+        <div class="logo"><a href="/"><img src="/images/trailr-hero.png" alt=""></a></div>
+        <div class="account-sign"><a href="#">About</a>
+        <% if !!!session["user_id"] %>
+            <button class="sign-up">Sign up</button>
+            <a href="/login"><button class="log-in">Log in</button></a>
+            <% else %>
+            <a href="/"></a><button class="log-in">Log out</button>
+        <% end %>
+        </div>
+    </nav>
+</div>
+
+<div class="show-one-trail">
+    <div class="show-image">
+        <img src="<%= trail["image_url"] %>" alt="">
+    </div>
+    <div class="show-info">
+        <h1><%= trail["title"] %></h1>
+        <p><%= trail["difficulty"] %></p>
+        <p>Rating: <%= trail["rating"] %></p>
+        <p class="trail-description">Description: <%= trail["description"] %></p>
+    </div>
+    <!-- <% # if trail["user_id"] == session["user_id"] %> -->
+    <form action="/trails" method="post">
+    <input type="hidden" name="_method" method="delete">
+    <input type="name" value="<%= trail["id"] %>">
+    <input type="button">
+    </form>
+</div>

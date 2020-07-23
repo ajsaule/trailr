@@ -1,0 +1,27 @@
+<div class="new-trail">
+    <form action="/trails" method="post">
+    <label for="">Title</label>
+    <input type="text" name="title">
+    <label for="">Image Link</label>
+    <input type="text" name="image_url">
+    <label for="">Description</label>
+    <textarea type="text" name="description" maxlength="200"></textarea>
+    <label for="rating">Rating</label>
+    <select name="rating" id="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <label for="">Difficulty</label>
+    <select name="difficulty" id="rating">
+        <option value="Easy">Easy</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Requires effort">Requires effort</option>
+        <option value="Expert">Expert</option>
+    </select>
+    <!-- <input type="hidden" name="user_id" value="<% #use session memory here %>"> --> 
+    <input type="submit">
+    </form>
+</div>

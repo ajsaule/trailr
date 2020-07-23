@@ -106,7 +106,7 @@ nav {
     grid-template-columns: 1fr 2fr ;
     grid-gap: 25px;
     gap: 25px;
-    padding: 25px;
+    padding: 15px;
     margin: 25px auto;
     width: 900px;
     height: 200px;
@@ -121,7 +121,35 @@ nav {
 }
 .feed-description h1, h5, p {
     margin: 10px;
+    /* figure out a way to hide the text that needs to be wrapped when there is too much of it */
+    /* width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
 }
+/* .trail-description {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} */
+
+.show-one-trail {
+    display: grid;
+    grid-template-rows: 1.5fr 1fr;
+    background-color:  #eae1c7;
+    box-shadow: 0 0 12px #919191;
+    margin: 25px auto;
+    border-radius: 10px;
+    width: 80%;
+    height: 70%;
+    padding: 30px;
+}
+.show-image img {
+    width: 50%;
+    border-radius: 10px;
+}
+
 
 @media screen and (max-width: 1290px) {
     .header-wrapper {
@@ -147,9 +175,12 @@ nav {
         height: 150px
     }
     .feed-image img {
-        transform: translateY(-50%);
+        /* transform: translateY(-50%);
         max-width: 100%;
-        height: auto;
+        height: auto; */
+        /* adjust the heights of the div and tile to contain more of the image */
+        object-fit: cover;
+        object-position: center;
         border-radius: 10px 10px 0 0;
     }
     .feed-description {
