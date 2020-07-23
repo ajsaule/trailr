@@ -1,3 +1,25 @@
+<div>
+    <nav>
+        <div class="explore">
+        <a href="#">Discover</a>
+        </div>
+        <div class="logo"><a href="/"><img src="/images/trailr-hero.png" alt=""></a></div>
+        <div class="account-sign">
+        <a href="#" class="about-us">About</a>
+        <% if !!!session["user_id"] %>
+            <a href="/signup"><button class="sign-up">Sign up</button></a>
+            <a href="/login"><button class="log-in">Log in</button></a>
+            <% else %>
+            <a href="/trails/new"><button class="sign-up">New Post</button></a>
+            <form action="/login" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button class="log-in">Log out</button>
+            </form>
+        <% end %>
+        </div>
+    </nav>
+</div>
+
 <div class="new-trail">
     <form action="/trails" method="post">
     <label for="">Title</label>
@@ -15,13 +37,12 @@
         <option value="5">5</option>
     </select>
     <label for="">Difficulty</label>
-    <select name="difficulty" id="rating">
+    <select name="difficulty">
         <option value="Easy">Easy</option>
         <option value="Moderate">Moderate</option>
         <option value="Requires effort">Requires effort</option>
         <option value="Expert">Expert</option>
     </select>
-    <!-- <input type="hidden" name="user_id" value="<% #use session memory here %>"> --> 
     <input type="submit">
     </form>
 </div>

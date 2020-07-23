@@ -12,12 +12,17 @@ def find_all_users
 end 
 
 def find_user_by_id id 
-    users = run_sql("SELECT * FROM users where id = #{id};")
+    users = run_sql "SELECT * FROM users where id = #{id};" 
     users.first
 end 
 
 def find_one_user_by_email email
-    users = run_sql("SELECT * FROM users WHERE email = '#{email}';")
+    users = run_sql "SELECT * FROM users WHERE email = '#{email}';"
+    users.first
+end
+
+def find_one_user_by_username username
+    users = run_sql "SELECT * FROM users WHERE username = '#{username}';"
     users.first
 end
 

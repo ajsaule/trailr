@@ -26,8 +26,14 @@ nav {
     text-decoration: none;
     font-weight: 500;
 }
-.account-sign a {
+.account-sign {
+    display: flex;
+}
+.about-us {
     margin: 0 20px 0 0;
+    padding-top: 20px;
+}
+.account-sign a {
     text-decoration: none;
 }
 .account-sign button {
@@ -57,6 +63,18 @@ nav {
     border-color: #e79768;
 }
 
+.signup-and-in {
+    background-color: #eae1c7;
+    border-radius: 15px;
+    width: 600px;
+    margin: 100px auto;
+    height: 800px;
+}
+.signup-and-in img {
+    width: 100%;
+    border-radius: 15px;
+}
+
 .header-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -68,17 +86,12 @@ nav {
     box-shadow: 0 0 12px #919191
 }
 .header-welcome {
-    height: 100px
+    padding: 20px;
 }
-.header-images {
+.header-map {
+    padding: 20px;
+}
 
-}
-.header-content {
-
-}
-.header-more-content {
-
-}
 .search-bar {
     display: flex;
     justify-items: space-between;
@@ -120,7 +133,6 @@ nav {
     height: 100%;
 }
 .feed-description h1, h5, p {
-    margin: 10px;
     /* figure out a way to hide the text that needs to be wrapped when there is too much of it */
     /* width: 250px;
     white-space: nowrap;

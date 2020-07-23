@@ -15,7 +15,7 @@ def find_one_trail_by_id id
 end 
 
 def create_trail title, image_url, description, rating, difficulty, user_id
-    run_sql "INSERT INTO trails (title, image_url, description, rating, difficulty) VALUES ('#{title}', '#{image_url}', '#{description}', #{rating}, '#{difficulty}', #{user_id});"
+    run_sql "INSERT INTO trails (title, image_url, description, rating, difficulty, user_id) VALUES ('#{title}', '#{image_url}', '#{description}', #{rating}, '#{difficulty}', #{user_id});"
 end 
 
 def destroy_trail id 

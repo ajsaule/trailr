@@ -4,12 +4,17 @@
         <a href="#">Discover</a>
         </div>
         <div class="logo"><a href="/"><img src="/images/trailr-hero.png" alt=""></a></div>
-        <div class="account-sign"><a href="#">About</a>
+        <div class="account-sign">
+        <a href="#" class="about-us">About</a>
         <% if !!!session["user_id"] %>
-            <button class="sign-up">Sign up</button>
+            <a href="/signup"><button class="sign-up">Sign up</button></a>
             <a href="/login"><button class="log-in">Log in</button></a>
             <% else %>
-            <a href="/"></a><button class="log-in">Log out</button>
+            <a href="/trails/new"><button class="sign-up">New Post</button></a>
+            <form action="/login" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button class="log-in">Log out</button>
+            </form>
         <% end %>
         </div>
     </nav>
@@ -25,10 +30,13 @@
         <p>Rating: <%= trail["rating"] %></p>
         <p class="trail-description">Description: <%= trail["description"] %></p>
     </div>
-    <!-- <% # if trail["user_id"] == session["user_id"] %> -->
-    <form action="/trails" method="post">
-    <input type="hidden" name="_method" method="delete">
-    <input type="name" value="<%= trail["id"] %>">
-    <input type="button">
-    </form>
+    <% if trail["user_id"] == session["user_id"] %>
+        <a href="/trails/edit"><button>Edit trail</button></a>
+        
+        <form action="/trails" method="post">
+        <input type="hidden" name="_method" method="delete">
+        <input type="hidden" value="<%= trail["id"] %>">
+        <input type="submit" label="Delete trail">
+        </form>
+    <% end %>
 </div>

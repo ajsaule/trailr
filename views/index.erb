@@ -1,14 +1,20 @@
 <div>
     <nav>
         <div class="explore">
-        <a href="#">Discover</a></div>
+        <a href="#">Discover</a>
+        </div>
         <div class="logo"><a href="/"><img src="/images/trailr-hero.png" alt=""></a></div>
-        <div class="account-sign"><a href="#">About</a>
+        <div class="account-sign">
+        <a href="#" class="about-us">About</a>
         <% if !!!session["user_id"] %>
-            <button class="sign-up">Sign up</button>
+            <a href="/signup"><button class="sign-up">Sign up</button></a>
             <a href="/login"><button class="log-in">Log in</button></a>
             <% else %>
-           <a href="/"></a><button class="log-in">Log out</button>
+            <a href="/trails/new"><button class="sign-up">New Post</button></a>
+            <form action="/login" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button class="log-in">Log out</button>
+            </form>
         <% end %>
         </div>
     </nav>
@@ -16,16 +22,27 @@
 
 <div class="header-wrapper">
     <div class="header-welcome">
+        <h2>Welcome <%= current_user["username"] %>,</h2>
+        <h4>Explore the trails that are available</h4>
+        <p>
+        Every week we get new trails for which you can organise to go with 
+        people from your local area or further out once COVID restrictions have raised.
+        The perfect way to get out of isolation and meet someone new. 
+        </p>
+        <p>
+        Freely make a post of your favorite trail and then set it to Open-Hike mode 
+        so that people can click attending on your event and join in on day that it is happening.
+        </p>
 
     </div>
-    <div class="header-images">
-
-    </div>
-    <div class="header-content">
-
-    </div>
-    <div class="header-more-content">
-
+    <div class="header-map">
+    <iframe
+        width="100%"
+        height="100%"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/view?key=AIzaSyChvPbQEGDG8V3tgyO2PPXkQ0doBVaF97k
+        &center=-37.8296,144.9758&zoom=16&maptype=satellite" allowfullscreen>
+    </iframe>
     </div>
 </div>
 <div class="search-bar">
