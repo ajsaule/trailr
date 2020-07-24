@@ -22,7 +22,7 @@ Check out my [Figma Wireframe](https://www.figma.com/file/MDJA29VCB2Cwx7YwBoSujw
 
 (Insert images of planning process)
 
-(Insert images of Trello board)
+Temporary link my [Trello board](https://imgur.com/7xkze9v)
 
 
 ## IMPROVEMENTS 
