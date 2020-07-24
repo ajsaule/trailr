@@ -21,11 +21,22 @@ get '/trails/new' do
   erb :new_trail
 end 
 
-get '/trails/edit' do
-  trail = find_one_trail_by_id["id"]
-
+get '/trails/:id/edit' do
+  trail = find_one_trail_by_id params["id"]
+  # binding.pry
+  if session["user_id"] == trail["user_id"]
   erb :edit_trail, locals: { trail: trail }
+  else 
+    ## show a login page 
+    "Make an account to edit posts!"
+  end
 end
+
+patch '/trails/:id' do
+  update_trail params["title"], params["image_url"], params["description"], params["rating"], params["difficulty"], params["id"]
+
+  redirect "/trails/#{params["id"]}"
+end 
 
 get '/trails/:id' do
   trail = find_one_trail_by_id params["id"]
@@ -34,8 +45,12 @@ get '/trails/:id' do
 end 
 
 post '/trails' do
+  if logged_in? 
   create_trail params["title"], params["image_url"], params["description"], params["rating"].to_i, params["difficulty"], session["user_id"]
-
+  else 
+    redirect "/signup"
+  end 
+  
   redirect '/'
 end 
 

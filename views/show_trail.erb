@@ -31,12 +31,12 @@
         <p class="trail-description">Description: <%= trail["description"] %></p>
     </div>
     <% if trail["user_id"] == session["user_id"] %>
-        <a href="/trails/edit"><button>Edit trail</button></a>
+        <a href="/trails/<%= trail["id"] %>/edit"><button>Edit trail</button></a>
         
         <form action="/trails" method="post">
-        <input type="hidden" name="_method" method="delete">
-        <input type="hidden" value="<%= trail["id"] %>">
-        <input type="submit" label="Delete trail">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="id" value="<%= trail["id"] %>">
+        <button>Delete trail</button>
         </form>
     <% end %>
 </div>

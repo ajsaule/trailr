@@ -1,0 +1,52 @@
+<div>
+    <nav>
+        <div class="explore">
+        <a href="#">Discover</a>
+        </div>
+        <div class="logo"><a href="/"><img src="/images/trailr-hero.png" alt=""></a></div>
+        <div class="account-sign">
+        <a href="#" class="about-us">About</a>
+        <% if !!!session["user_id"] %>
+            <a href="/signup"><button class="sign-up">Sign up</button></a>
+            <a href="/login"><button class="log-in">Log in</button></a>
+            <% else %>
+            <a href="/trails/new"><button class="sign-up">New Post</button></a>
+            <form action="/login" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button class="log-in">Log out</button>
+            </form>
+        <% end %>
+        </div>
+    </nav>
+</div>
+
+<div class="show-one-trail">
+    <div class="show-image">
+        <img src="<%= trail["image_url"] %>" alt="">
+    </div>
+    <form action="/trails/<%= trail["id"] %>" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <label for="">Image URL</label>
+        <input type="text" name="image_url" value="<%= trail["image_url"] %>">
+        <label for="">Title</label>
+        <input type="text" name="title" value="<%= trail["title"] %>">
+        <label for="">Rating</label>
+        <select name="rating" id="rating" value="<%= trail["rating"] %>">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <label for="">Difficulty</label>
+        <select name="difficulty" value="<%= trail["difficulty"] %>">
+            <option value="Easy">Easy</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Requires effort">Requires effort</option>
+            <option value="Expert">Expert</option>
+        </select>
+        <label for="">Description</label>
+        <textarea name="description" id="" cols="30" rows="10"><%= trail["description"] %></textarea>
+        <button>Submit changes</button>
+    </form>
+</div>

@@ -22,7 +22,11 @@
 
 <div class="header-wrapper">
     <div class="header-welcome">
+        <% if logged_in? %>
         <h2>Welcome <%= current_user["username"] %>,</h2>
+        <% else %>
+        <h2>Welcome,</h2>
+        <% end %>
         <h4>Explore the trails that are available</h4>
         <p>
         Every week we get new trails for which you can organise to go with 
@@ -39,7 +43,7 @@
     <iframe
         width="100%"
         height="100%"
-        frameborder="0" style="border:0"
+        frameborder="0" style="border:0; border-radius:15px"
         src="https://www.google.com/maps/embed/v1/view?key=AIzaSyChvPbQEGDG8V3tgyO2PPXkQ0doBVaF97k
         &center=-37.8296,144.9758&zoom=16&maptype=satellite" allowfullscreen>
     </iframe>

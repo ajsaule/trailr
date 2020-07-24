@@ -21,7 +21,9 @@
 </div>
 
 <div class="new-trail">
+    <h1>Create a new trail</h1>
     <form action="/trails" method="post">
+    <input type="hidden" name="_method" value="patch">
     <label for="">Title</label>
     <input type="text" name="title">
     <label for="">Image Link</label>

@@ -22,6 +22,6 @@ def destroy_trail id
     run_sql "DELETE FROM trails WHERE id = #{id}"
 end 
 
-def update_trail title, image_url, description, rating, difficulty
-    run_sql "UPDATE trails SET title = '#{title}', image_url = '#{img_url}', description = '#{description}', rating = #{rating}, difficulty = '#{difficulty}';"
+def update_trail title, image_url, description, rating, difficulty, id 
+    run_sql "UPDATE trails SET title = '#{title}', image_url = '#{image_url}', description = '#{description}', rating = #{rating}, difficulty = '#{difficulty}' WHERE id = '#{id}';"
 end 

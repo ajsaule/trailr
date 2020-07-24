@@ -162,6 +162,15 @@ nav {
     border-radius: 10px;
 }
 
+.new-trail {
+    background-color:  #eae1c7;
+    box-shadow: 0 0 12px #919191;
+    margin: 25px auto;
+    border-radius: 10px;
+    width: 500px;
+    height: 600px;
+    padding: 30px;
+}
 
 @media screen and (max-width: 1290px) {
     .header-wrapper {
