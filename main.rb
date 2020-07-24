@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'pg'
-require 'pry'
 
 also_reload 'models/trail' if development? 
 require_relative 'models/trail'
