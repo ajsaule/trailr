@@ -1,5 +1,5 @@
 def run_sql query
-    db = PG.connect(dbname: 'trails_app')
+    db = PG.connect(ENV['DATABASE_URL'] || {dbname: 'trails_app'})
     results = db.exec(query)
     db.close 
     results
@@ -25,3 +25,7 @@ end
 def update_trail title, image_url, description, rating, difficulty, id 
     run_sql "UPDATE trails SET title = '#{title}', image_url = '#{image_url}', description = '#{description}', rating = #{rating}, difficulty = '#{difficulty}' WHERE id = '#{id}';"
 end 
+
+def search_trail title 
+    run_sql "SELECT * FORM trails WHERE title ILIKE '#{title}"
+end

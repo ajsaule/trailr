@@ -27,7 +27,6 @@
         <% else %>
         <h2>Welcome,</h2>
         <% end %>
-        <h4>Explore the trails that are available</h4>
         <p>
         Every week we get new trails for which you can organise to go with 
         people from your local area or further out once COVID restrictions have raised.
@@ -37,6 +36,7 @@
         Freely make a post of your favorite trail and then set it to Open-Hike mode 
         so that people can click attending on your event and join in on day that it is happening.
         </p>
+        <h4>In the meantime, explore the trails that are available!</h4>
 
     </div>
     <div class="header-map">
@@ -51,7 +51,9 @@
 </div>
 <div class="search-bar">
     <p>Melbourne</p>
-    <i class="fa fa-search"></i><input class="search-bar" type="text">
+    <form action="/search">
+    <input class="search-bar" type="text" onkeyup="key_up(this)">
+    </form>
 </div>
 
 <% all_trails.each do |trail| %>
@@ -61,9 +63,14 @@
     </div>
     <div class="feed-description">
         <h1><%= trail["title"] %></h1>
-        <p><%= trail["difficulty"] %></p>
-        <p>Rating: <%= trail["rating"] %></p>
-        <p class="trail-description">Description: <%= trail["description"] %>...<a href="/trails/<%= trail["id"] %>">see more</a></p>
+        <p>Difficulty: <%= trail["difficulty"] %></p>
+        <p>Rating: <%= trail["rating"] %>/ 5</p>
+        <p class="trail-description" style="white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 500px;
+            height: 15px;">
+    Description: <%= trail["description"] %></p><a href="/trails/<%= trail["id"] %>">see more</a>
     </div>
 </div>
 <% end %>

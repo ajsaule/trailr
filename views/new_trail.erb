@@ -23,13 +23,12 @@
 <div class="new-trail">
     <h1>Create a new trail</h1>
     <form action="/trails" method="post">
-    <input type="hidden" name="_method" value="patch">
     <label for="">Title</label>
     <input type="text" name="title">
     <label for="">Image Link</label>
     <input type="text" name="image_url">
     <label for="">Description</label>
-    <textarea type="text" name="description" maxlength="200"></textarea>
+    <textarea type="text" name="description" maxlength="300"></textarea>
     <label for="rating">Rating</label>
     <select name="rating" id="rating">
         <option value="1">1</option>

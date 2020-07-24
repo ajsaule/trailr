@@ -1,14 +1,15 @@
 require 'sinatra'
-require 'sinatra/reloader'
+require 'sinatra/reloader' if development?
 require 'pg'
 require 'pry'
 
-also_reload 'models/trail' # remember to if development? - once deployed to Heroku
+also_reload 'models/trail' if development? 
 require_relative 'models/trail'
 require_relative 'models/user'
 
 enable :sessions 
 
+## =====-- INDEX PAGE/ FIND ALL TRAILS --===== ##
 get '/' do
   all_trails = find_all_trails
   all_users = find_all_users
@@ -16,14 +17,15 @@ get '/' do
   erb :index, locals: { all_trails: all_trails }
 end
 
+## =====-- NEW TRAIL SCREEN --===== ##
 get '/trails/new' do 
     
   erb :new_trail
 end 
 
+## =====-- EDIT/ UPDATE TRAIL BY ID --===== ##
 get '/trails/:id/edit' do
   trail = find_one_trail_by_id params["id"]
-  # binding.pry
   if session["user_id"] == trail["user_id"]
   erb :edit_trail, locals: { trail: trail }
   else 
@@ -44,6 +46,7 @@ get '/trails/:id' do
   erb :show_trail, locals: { trail: trail }
 end 
 
+## =====-- CREATE NEW TRAIL IF LOGGED IN --===== ##
 post '/trails' do
   if logged_in? 
   create_trail params["title"], params["image_url"], params["description"], params["rating"].to_i, params["difficulty"], session["user_id"]
@@ -60,6 +63,13 @@ delete '/trails' do
   redirect "/"
 end 
 
+## =====-- SEARCH FOR NEW TRAIL --===== ##
+get '/search' do
+  "searching..."
+end
+
+
+## =====-- LOGIN/ SIGNUP --===== ##
 get '/login' do
 
   erb :login
@@ -79,10 +89,6 @@ post '/signup' do
   redirect "/"
 end 
 
-## fix login screen and authentication 
-## engineer so that only the user that created certain posts can edit and remove them.. 
-## also attach a user ID to a post when it is created, so that we can do a session["id"] check if it is ok to delete the post. 
-
 post '/login' do
   user = find_one_user_by_username( params["username"] )
 
@@ -94,6 +100,7 @@ post '/login' do
   end
 end 
 
+## =====-- METHOD TO DEFINE IF LOGGED IN or NOT --===== ##
 def logged_in? 
   # or use double negation .. !!session["user_id"]
   if session["user_id"]
@@ -106,6 +113,7 @@ end
 def current_user 
   find_user_by_id session["user_id"]
 end
+
 =begin
 get '/logout' do
   Animate a button in for the user to click to confirm a logout
@@ -113,6 +121,7 @@ get '/logout' do
 end
 =end 
 
+## =====-- LOGOUT --===== ##
 delete '/login' do 
   session["user_id"] = nil 
 

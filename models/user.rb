@@ -1,7 +1,7 @@
 require 'bcrypt'
 
 def run_sql query
-    db = PG.connect(dbname: 'trails_app')
+    db = PG.connect(ENV['DATABASE_URL'] || {dbname: 'trails_app'})
     results = db.exec(query)
     db.close 
     results

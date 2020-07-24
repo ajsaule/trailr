@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+/* =====-- WHOLE DOCUMENT --===== */
 * {
     font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
 }
-
 body {
     background-color: #b2b9b8; /* or lightseagreen */
 }
+
+/* =====-- NAVBAR --===== */
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -63,18 +67,30 @@ nav {
     border-color: #e79768;
 }
 
+/* =====-- SINGUP/ SIGNIN --===== */
 .signup-and-in {
     background-color: #eae1c7;
     border-radius: 15px;
     width: 600px;
     margin: 100px auto;
     height: 800px;
+    padding: 50px;
+    text-align: center;
 }
 .signup-and-in img {
     width: 100%;
     border-radius: 15px;
 }
+.signup-and-in input {
+    display: block;
+    border-radius: 15px;
+    border: none;
+}
+.signup-and-in input {
+    margin: 25px auto;
+}
 
+/* =====-- INDEX HEADING WELCOME/ MAP --===== */
 .header-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -92,28 +108,38 @@ nav {
     padding: 20px;
 }
 
+/* =====-- SEARCH BAR --===== */
 .search-bar {
     display: flex;
     justify-items: space-between;
     margin: 0 auto;
-    width: 950px;
-    /* align-items: flex-end; */
     border-style: none;
     outline: none;
+    width: 1150px;
 }
 .search-bar p {
     margin: 12px;
     padding-right: 50px;
     font-size: 15pt;
 }
+.search-bar form {
+    width: 100%;
+    display: flex;
+    justify-items: space-between;
+    margin: 0 auto;
+    border-style: none;
+    outline: none;
+}
 .search-bar input {
+    border-radius: 15px;
     font-size: 15pt;
-    border-radius: 10px;
+    width: 90%
 }
 .search-field i {
     position: absolute;
 }
 
+/* =====-- TRAILS FEED TIELES --===== */
 .feed-tile {
     display: grid;
     grid-template-columns: 1fr 2fr ;
@@ -122,7 +148,6 @@ nav {
     padding: 15px;
     margin: 25px auto;
     width: 900px;
-    height: 200px;
     border-radius: 10px;
     background-color:  #eae1c7;
     box-shadow: 0 0 12px #919191
@@ -132,20 +157,14 @@ nav {
     width: 100%;
     height: 100%;
 }
-.feed-description h1, h5, p {
-    /* figure out a way to hide the text that needs to be wrapped when there is too much of it */
-    /* width: 250px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
+.feed-description {
+    height: 160px;
 }
-/* .trail-description {
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-} */
+.feed-description p {
+    font-size: 10pt;
+}
 
+/* =====-- SEE MORE TRAILS DATA --===== */
 .show-one-trail {
     display: grid;
     grid-template-rows: 1.5fr 1fr;
@@ -162,6 +181,7 @@ nav {
     border-radius: 10px;
 }
 
+/* =====-- NEW TRAIL FORM --===== */
 .new-trail {
     background-color:  #eae1c7;
     box-shadow: 0 0 12px #919191;
@@ -171,6 +191,27 @@ nav {
     height: 600px;
     padding: 30px;
 }
+.new-trail input, textarea {
+    display: block;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: none;
+    width: 60%;
+}
+.new-trail select {
+    display: block;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: none;
+    width: 30%;
+}
+.new-trail textarea {
+    margin: 0px 176px 25px 0px; 
+    width: 321px; 
+    height: 140px;
+}
+
+/* =====-- MEDIA QUEIRES  --===== */
 
 @media screen and (max-width: 1290px) {
     .header-wrapper {
@@ -196,16 +237,18 @@ nav {
         height: 150px
     }
     .feed-image img {
-        /* transform: translateY(-50%);
-        max-width: 100%;
-        height: auto; */
-        /* adjust the heights of the div and tile to contain more of the image */
         object-fit: cover;
         object-position: center;
         border-radius: 10px 10px 0 0;
     }
     .feed-description {
-        height: 125px
+        height: 160px;
+        width: 95%;
+        padding-left: 15px;
+    }
+    .feed-description h1 {
+        margin: 0;
+        font-size: 15pt;
     }
 }
 
