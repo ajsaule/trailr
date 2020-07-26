@@ -27,4 +27,4 @@ Temporary link to my [Trello board](https://imgur.com/7xkze9v)
 
 
 ## IMPROVEMENTS 
-- 
+- See trello board
