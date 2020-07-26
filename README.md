@@ -1,19 +1,20 @@
-## TRAILR: Open hiking platform Readme
-Trailr is a CRUD app build with Ruby that allows people who are feeling isolated or lonely to browse popular walking trails and join as pairs to the posted 'open-hikes' or (when restrictions are lifted from COVID) as groups of 5, 10, 15 to go walking/ hiking together. 
+# TRAILR: Open hiking platform 
+Trailr is a CRUD app build with Ruby that allows people who are feeling isolated or lonely to browse popular walking trails and join as pairs to the posted 'open-hikes' or (when restrictions are lifted from COVID19) as groups of 5, 10, 15 to go walking/ hiking together. 
 
 #### Technologies used 
-- Ruby 
-- Sinatra
-- JavaScript (Google Maps API)
+- Ruby/ Sinatra
+- PostgreSQL
+- Google Maps Embed API
+- BCrypt [password hashing](https://github.com/codahale/bcrypt-ruby)
 - HTML/ CSS 
 
 # Application Features 
 
-Using the app you will notice that you can create, read, update and delete posts as as mentioned it is a basic CRUD app. As development progresses I would ideally like to have features where the user can have a profile and 
+Using the app you will notice that you can create, read, update and delete posts as as mentioned it is a basic CRUD app. As development progresses I would ideally like to have features where the user can have a profile page and have all their favorite trails stored there along with the open-hike events and the date they will be attending them (Notifications and reminders included). 
 
 #### Hidden Features 
 
-- Login screen hovering over the logo activates something? 
+- To get to home screen click on the TRAILR logo 
 - 
 
 ## Initial Wireframing 
@@ -22,7 +23,7 @@ Check out my [Figma Wireframe](https://www.figma.com/file/MDJA29VCB2Cwx7YwBoSujw
 
 (Insert images of planning process)
 
-Temporary link my [Trello board](https://imgur.com/7xkze9v)
+Temporary link to my [Trello board](https://imgur.com/7xkze9v)
 
 
 ## IMPROVEMENTS 

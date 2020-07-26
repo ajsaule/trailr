@@ -11,7 +11,7 @@ CREATE TABLE trails (
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    nickname TEXT,
+    username TEXT,
     email TEXT,
     password_digest TEXT
 );
