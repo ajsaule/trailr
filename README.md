@@ -13,21 +13,26 @@ Trailr is a CRUD app build with Ruby and microframework Sinatra that allows peop
 
 # Application Features 
 
-Using the app you will notice that you can create, read, update and delete posts as as mentioned before it has all the fundamental features of a CRUD application. As development progresses I would ideally like to add features where the user can have a profile page and have all their favorite trails stored there along with the open-hike events and the date they will be attending them (Notifications and reminders included). Also ideally there would be some commenting and rating capability for users to use. 
+Using the app you will notice that you can create, read, update and delete posts as as mentioned before it has all the fundamental features of a CRUD application. As development progresses I would ideally like to add features where the user can have a profile page and have all their favorite trails stored there along with the open-hike events and the date they will be attending them (Notifications and reminders included). Also ideally there would be a comment and rating capability for users to use. 
 
 #### Hidden Features 
 
 - To get to home screen click on the TRAILR logo 
-- 
+- Everything else should be taken at face value. 
 
 ## Initial Wireframing 
 
-Check out my [Figma Wireframe](https://www.figma.com/file/MDJA29VCB2Cwx7YwBoSujw/Untitled?node-id=0%3A1)
+Check out my [figma wireframe](https://www.figma.com/file/MDJA29VCB2Cwx7YwBoSujw/Untitled?node-id=0%3A1)
 
-Here is the initial [Trello board](https://imgur.com/7xkze9v)
+![Figma Wireframe](public/images/figma_wireframe.png)
 
-The current [Trello board](https://trello.com/b/Gtl7giGf)
+Here is the initial [trello board](https://imgur.com/7xkze9v)
+
+![Initial Trello Board](public/images/trello)
+
+..and the most up to date (evergrowing) [trello board](https://trello.com/b/Gtl7giGf)
 
 
 ## IMPROVEMENTS 
-- See trello board
+- Implement desired features that were leftover after 2.5 day sprint finished. 
+- For all else see trello board 
