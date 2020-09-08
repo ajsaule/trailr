@@ -28,7 +28,7 @@ Check out my [figma wireframe](https://www.figma.com/file/MDJA29VCB2Cwx7YwBoSujw
 
 Here is the initial [trello board](https://imgur.com/7xkze9v)
 
-![Initial Trello Board](public/images/trello)
+![Initial Trello Board](public/images/trello_initial_board.png)
 
 ..and the most up to date (evergrowing) [trello board](https://trello.com/b/Gtl7giGf)
 
