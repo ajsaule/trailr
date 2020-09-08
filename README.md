@@ -2,6 +2,8 @@
 
 Have a look [here](https://rocky-hollows-48883.herokuapp.com/)
 
+![Final Screenshot](public/images/project_2_screen.png)
+
 Trailr is a CRUD app build with Ruby and microframework Sinatra that allows people who are feeling isolated or lonely to browse popular walking trails and join as pairs to the posted 'open-hikes' or (when restrictions are lifted from COVID19) as groups of 5, 10, 15 to go walking/ hiking together. 
 
 #### Technologies used 
